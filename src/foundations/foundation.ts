@@ -3,6 +3,8 @@ let firstName: string = 'Angie';
 let isWorking: boolean = true;
 let hobbies: string[] = ['reading', 'uno'];
 
+let humans: Array<Human> = [];
+
 enum Shoes { NB, Nike, Adidas }
 
 let shoes: Shoes = Shoes.Nike;
@@ -25,7 +27,6 @@ const createHuman = (human: Human): Human => {
     };
 }
 
-// Example usage:
 const angie: Human = {
     age: age,
     firstName: firstName,
@@ -35,4 +36,16 @@ const angie: Human = {
 };
 
 const newHuman = createHuman(angie);
-console.log(newHuman);
+
+const removeHuman = (humans: Array<Human>, humanToRemove: Human): Array<Human> => {
+    return humans.filter(human => human !== humanToRemove)
+}
+
+humans.push(angie)
+console.log(humans)
+
+const newList = removeHuman(humans, angie)
+
+console.log(newList)
+
+
